@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace Primes
 {
@@ -6,19 +7,23 @@ namespace Primes
     {
         static void Main(string[] args)
         {
+            
             float num;
             string response;
-            Console.WriteLine("Enter a number: ");
-            response = Console.ReadLine();
-            num = int.Parse(response);
-            if (IsPrime(num))
-            {
-                Console.WriteLine(num + ": is prime");
-            }
-            else
-            {
-                Console.WriteLine(num + ": is not prime");
-            }
+            
+            
+                Console.WriteLine("Enter a number: ");
+                response = Console.ReadLine();
+                num = int.Parse(response);
+                if (IsPrime(num))
+                {
+                    Console.WriteLine(num + ": is prime");
+                }
+                else
+                {
+                    Console.WriteLine(num + ": is not prime");
+                }
+            
         }
         public static bool IsPrime(float number)
         {
@@ -28,9 +33,21 @@ namespace Primes
                 return true;
             if (number % 2 == 0)
                 return false;
+            /*if (number % number == 0 && number % 1 == 0 && number % 2 != 0)
+            {
+                return true;
+            }*/
+
+            for (int i = 2; i * i <= number; i++)
+            {
+                if (number % i == 0)
+                {
+                    return false;
+                }
+            }
 
             //TODO
-            return false;
+            return true; // estaba en false
         }
     }
 }
