@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 
 namespace DayOfTheWeek
 {
@@ -28,8 +29,22 @@ namespace DayOfTheWeek
         }
         public static int DayOfTheWeek(int year, int month, int day)
         {
-            //TODO
-            return -1;
+            if (month <= 2)
+            {
+                month = month + 10;
+                year = year - 1;
+            }
+            else
+            {
+                month = month - 2;
+            }
+
+            int a = year % 100;
+            int b = year / 100;
+
+            int resultado = (700 + ((26 * month - 2) / 10) + day + a + a / 4 + b / 4 - 2 * b ) % 7;
+
+            return resultado;
         }
     }
 }
