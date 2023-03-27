@@ -33,17 +33,10 @@ namespace Primes
                 return true;
             if (number % 2 == 0)
                 return false;
-            /*if (number % number == 0 && number % 1 == 0 && number % 2 != 0)
-            {
-                return true;
-            }*/
-
-            for (int i = 2; i * i <= number; i++)
+            for (int i = 3; i <= Math.Sqrt(number); i += 2)
             {
                 if (number % i == 0)
-                {
                     return false;
-                }
             }
 
             //TODO

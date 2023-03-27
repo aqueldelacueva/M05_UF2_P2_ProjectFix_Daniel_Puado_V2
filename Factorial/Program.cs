@@ -38,18 +38,18 @@ namespace Factorial
 
         public static float average(List<float> numbers)
         {
-            float sum = 0;
+            float sum = 0f;
             for (int i = 0; i < numbers.Count; i++)
             {
                 sum += numbers[i];
             }
-            return sum;
+            return sum / numbers.Count;
         }
         public static ulong factorial_recursive(ulong n)
         {
-            if (n < 1)
+            if (n <= 1) // menor o igual a 1
             {
-                return factorial_recursive(n - 1);
+                return 1; //devuelve 1 y no la operación
             }
             return n * factorial_recursive(n - 1);
         }

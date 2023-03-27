@@ -16,7 +16,7 @@ namespace Tests
             {
                 numbers.Add(Utils.random.Next() % 100);
             }
-            float result = 0;
+            float result = 0f;
             float resultOK = numbers.Average();
             //Act
             result = Factorial.Program.average(numbers);

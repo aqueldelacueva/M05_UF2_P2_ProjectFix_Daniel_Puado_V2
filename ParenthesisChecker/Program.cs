@@ -10,7 +10,7 @@ namespace ParenthesisChecker
             string response = Console.ReadLine();
             int open = CountChars(response, '(');
             int close = CountChars(response, ')');
-            if(open == close)
+            if (open == close)
             {
                 Console.WriteLine("The parenthesis close");
             }
