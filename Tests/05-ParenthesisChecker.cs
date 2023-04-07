@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Linq;
 using System.Text;
 
@@ -27,6 +28,7 @@ namespace Tests
             bool resultOK = false;
             if (original[0] == '(' && original.Length % 2 == 0)
             {
+                
                 int countOpen = original.Count(c => c == '(');
                 int countClose = original.Count(c => c == ')');
                 resultOK = countOpen == countClose;
